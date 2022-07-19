@@ -32,26 +32,26 @@
                 "name": "install",
                 "action": "Install",
                 "contentType": "Path",
-                "content": "scripts/install.ps1",
+                "content": "Scripts/install.ps1",
                 "restartAfter": true
               },
               {
                 "name": "launch",
                 "action": "Launch",
                 "contentType": "Path",
-                "content": "scripts/launch.ps1"
+                "content": "Scripts/launch.ps1"
               },
               {
                 "name": "close",
                 "action": "Close",
                 "contentType": "Path",
-                "content": "scripts/close.ps1"
+                "content": "Scripts/close.ps1"
               },
               {
                 "name": "uninstall",
                 "action": "Uninstall",
                 "contentType": "Path",
-                "content": "scripts/uninstall.ps1"
+                "content": "Scripts/uninstall.ps1"
               }
             ],
             "testType": "OutOfBoxTest"

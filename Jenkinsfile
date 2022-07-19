@@ -14,12 +14,12 @@ pipeline {
         }
         stage('clean') {
             steps {
-                powershell 'rm target.zip'
+                powershell 'rm target.zip -ErrorAction SilentlyContinue'
             }
         }
         stage('package') {
             steps {
-                powershell 'Compress-Archive -Path .\\bin\\Release\\net6.0\\ -DestinationPath .\\target.zip'
+                powershell 'Compress-Archive -Path .\\bin\\Release\\net6.0\\* -DestinationPath .\\target.zip'
             }
         }
         stage('onboard') {
