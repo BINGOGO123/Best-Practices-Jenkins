@@ -1,0 +1,62 @@
+{
+    "tenantId": "f686d426-8d16-42db-81b7-ab578e110ccd",
+    "clientId": "eb82c345-56d8-4ccd-b0c0-525a025e9adc",
+    "subscriptionId": "9fabf001-9c1f-4aab-9451-e431da271956",
+    "resourceGroup": "bingoz",
+    "testBaseAccount": "worst_account",
+    "artifact": "target.zip",
+    "package": {
+      "location": "global",
+      "properties": {
+        "applicationName": "jenkins-testbase-plugin-sample",
+        "version": "1.0",
+        "targetOSList": [
+          {
+            "osUpdateType": "Security updates",
+            "targetOSs": [
+              "Windows 11 21H2"
+            ]
+          },
+          {
+            "osUpdateType": "Feature updates",
+            "targetOSs": [
+              "Windows 11 21H2"
+            ]
+          }
+        ],
+        "flightingRing": "Insider Beta Channel",
+        "tests": [
+          {
+            "commands": [
+              {
+                "name": "install",
+                "action": "Install",
+                "contentType": "Path",
+                "content": "scripts/install.ps1",
+                "restartAfter": true
+              },
+              {
+                "name": "launch",
+                "action": "Launch",
+                "contentType": "Path",
+                "content": "scripts/launch.ps1"
+              },
+              {
+                "name": "close",
+                "action": "Close",
+                "contentType": "Path",
+                "content": "scripts/close.ps1"
+              },
+              {
+                "name": "uninstall",
+                "action": "Uninstall",
+                "contentType": "Path",
+                "content": "scripts/uninstall.ps1"
+              }
+            ],
+            "testType": "OutOfBoxTest"
+          }
+        ]
+      }
+    }
+  }
