@@ -12,6 +12,11 @@ pipeline {
                 powershell 'dotnet build --configuration Release --no-restore'
             }
         }
+        stage('clean') {
+            steps {
+                powershell 'rm target.zip'
+            }
+        }
         stage('package') {
             steps {
                 powershell 'Compress-Archive -Path .\\bin\\Release\\net6.0\\ -DestinationPath .\\target.zip'
@@ -19,7 +24,7 @@ pipeline {
         }
         stage('onboard') {
             steps {
-                testBase useConfigurationFile: true, configurationFilePath: 'TestBase.json'
+                testBase useConfigurationFile: true, configurationFilePath: 'TestBase.json', credentialsId: 'dfclientsecret'
             }
         }
     }
